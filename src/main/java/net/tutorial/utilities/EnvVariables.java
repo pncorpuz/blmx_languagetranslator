@@ -4,23 +4,30 @@ import java.util.HashMap;
 import java.util.Map;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import com.google.gson.JsonParser;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 
 public class EnvVariables {
 	
 	boolean hasVcap = false;
-	JSONObject vcap;
+	JSONObject vcap = null;
 	
 	public EnvVariables() {
 		String VCAP_SERVICES = System.getenv("VCAP_SERVICES");
 		
 		if (VCAP_SERVICES != null) {
 			this.hasVcap = true;
-			JsonParser parser = new JsonParser();
+			JSONParser parser = new JSONParser();
 			Object obj;
-			obj = parser.parse(VCAP_SERVICES);
-			vcap =  (JSONObject) obj;
+			
+			try {
+				obj = parser.parse(VCAP_SERVICES);
+				vcap =  (JSONObject) obj;
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
+			
 		}
 	}
 	
