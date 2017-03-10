@@ -9,8 +9,8 @@
 <link href="css/styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-	<legend class="header">Watson - Language Translation Service</legend>
-
+	<legend class="header">CURUGAN AND CORPUZ - Language Translation Service</legend>
+	<marquee><img src="curugan" height="42" width="42"></marquee>
 	<form method="POST" action="home">
 		<p class="tr-selector">
 			<select name="tr-model-id">
