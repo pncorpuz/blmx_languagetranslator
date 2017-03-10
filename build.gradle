@@ -12,7 +12,7 @@ dependencies {
 	compile 'com.ibm.watson.developer_cloud:language-translator:3.5.3'
     compile 'org.slf4j:slf4j-api:1.7.21'
     testCompile 'junit:junit:4.12'
-    compileOnly 'org.apache.geronimo.specs:geronimo-servlet_3.0_spec:1.0'
+    
     compileOnly 'javax.servlet:jstl:1.2'
 }  
  
