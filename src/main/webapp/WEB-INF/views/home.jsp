@@ -10,7 +10,7 @@
 </head>
 <body>
 	<legend class="header">CURUGAN AND CORPUZ - Language Translation Service</legend>
-	<marquee><img src="css/curugan.jpg"></marquee>
+	<marquee><img src="css/curugan.jpg" width="200px" height="200px"></marquee>
 	<form method="POST" action="home">
 		<p class="tr-selector">
 			<select name="tr-model-id">
