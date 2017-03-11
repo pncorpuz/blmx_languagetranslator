@@ -20,6 +20,7 @@ import net.tutorial.utilities.TranslatorService;
 import net.tutorial.utilities.SpeechToTextService;
 
 @WebServlet({"/home", ""})
+@MultipartConfig
 public class MainController extends HttpServlet {
 
 	@Override
