@@ -19,7 +19,7 @@
 				<option value="en-pt">English - Portuguese</option>
 				<option value="en-es">English - Spanish</option>
 			</select>
-			<button class="tr-action" type="submit">Translate</button>
+			
 		</p>
 
 		<div class="panel">
