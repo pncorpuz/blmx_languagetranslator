@@ -11,6 +11,7 @@
 <body>
 	<legend class="header">CURUGAN AND CORPUZ - Language Translation Service</legend>
 	<marquee><img src="css/curugan.jpg" width="200px" height="200px"></marquee>
+	
 	<form method="POST" action="home">
 		<p class="tr-selector">
 			<select name="tr-model-id">
@@ -19,7 +20,7 @@
 				<option value="en-pt">English - Portuguese</option>
 				<option value="en-es">English - Spanish</option>
 			</select>
-			
+			<button class="tr-action" type="submit">Translate</button>
 		</p>
 
 		<div class="panel">
@@ -32,8 +33,8 @@
 					test="${!empty translation}">${translation}</c:if></textarea>
 		</div>
 
-	
-	
+	</form>
+	<!--
 	<legend class="header">Convert Speech to Text</legend>
 	 
 	
@@ -45,7 +46,7 @@
 		<h3>Transcript: </h3>
 		<p class="result">${transcription}</p>
 	</c:if>
-
+ !--> 
 
 </body>
 </html>
