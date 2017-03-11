@@ -43,7 +43,7 @@ public class MainController extends HttpServlet {
 		req.setAttribute("text", text);
 		req.setAttribute("modelId", modelId);
 		// req.setAttribute("transcription", s2t.getTranscription(new File(filePath)));
-		dispatcher.forward(req, resp);
+		//dispatcher.forward(req, resp);
 	}
 	
 	// File Management	
