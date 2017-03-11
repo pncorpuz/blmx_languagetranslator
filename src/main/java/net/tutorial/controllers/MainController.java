@@ -42,7 +42,7 @@ public class MainController extends HttpServlet {
 	}
 	
 	// File Management	
-	/**
+	
 	private String saveFile(Part filePart) throws IOException {
 		final String fileName = getFileName(filePart);
 		OutputStream out = null;
@@ -97,6 +97,6 @@ public class MainController extends HttpServlet {
 		}
 		return name;
 	}
-	**/
+	
 	
 }

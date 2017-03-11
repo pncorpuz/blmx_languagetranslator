@@ -34,15 +34,8 @@
 		</div>
 
 	</form>
-<<<<<<< Upstream, based on dee097175dbc6b1450e20c60c834ced4882fdd97
-	<!--
-=======
-<<<<<<< master
-	<!--
-=======
+
 	
->>>>>>> 509e348 kj
->>>>>>> fcd6553 ok na
 	<legend class="header">Convert Speech to Text</legend>
 	 
 	
@@ -54,7 +47,7 @@
 		<h3>Transcript: </h3>
 		<p class="result">${transcription}</p>
 	</c:if>
- !--> 
+ 
 
 </body>
 </html>
