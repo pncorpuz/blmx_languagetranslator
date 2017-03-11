@@ -30,14 +30,19 @@ public class MainController extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		final Part filePart = req.getPart("file");
+		String filePath = saveFile(filePart);
 		String text = req.getParameter("tr-from");
 		String modelId = req.getParameter("tr-model-id");
-		
+
+		SpeechToTextService s2t = new SpeechToTextService();
 		TranslatorService lt = new TranslatorService();
+		
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/home.jsp");
 		req.setAttribute("translation", lt.getTranslation(text,modelId));
 		req.setAttribute("text", text);
 		req.setAttribute("modelId", modelId);
+		req.setAttribute("transcription", s2t.getTranscription(new File(filePath)));
 		dispatcher.forward(req, resp);
 	}
 	
