@@ -2,6 +2,13 @@ package net.tutorial.controllers;
 
 import java.io.IOException;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -32,6 +39,63 @@ public class MainController extends HttpServlet {
 		req.setAttribute("text", text);
 		req.setAttribute("modelId", modelId);
 		dispatcher.forward(req, resp);
+	}
+	
+	// File Management	
+	
+	private String saveFile(Part filePart) throws IOException {
+		final String fileName = getFileName(filePart);
+		OutputStream out = null;
+		InputStream filecontent = null;
+		String filePath = setDir("fileResource") + File.separator + fileName;
+
+		try {
+
+			out = new FileOutputStream(new File(filePath));
+
+			filecontent = filePart.getInputStream();
+			int read = 0;
+			final byte[] bytes = new byte[1024];
+
+			while ((read = filecontent.read(bytes)) != -1) {
+				out.write(bytes, 0, read);
+			}
+			
+			return filePath;
+			
+		} catch (FileNotFoundException fne) {
+			fne.printStackTrace();
+			return "";
+		} finally {
+			if (out != null) {
+				out.close();
+			}
+			if (filecontent != null) {
+				filecontent.close();
+			}
+		}
+
+	}
+
+	private String getFileName(final Part part) {
+		for (String content : part.getHeader("content-disposition").split(";")) {
+			if (content.trim().startsWith("filename")) {
+				return content.substring(content.indexOf('=') + 1).trim().replace("\"", "");
+			}
+		}
+		return null;
+	}
+
+	private String setDir(String name) {
+		File dir = new File(name);
+		if (!dir.exists()) {
+			try {
+				dir.mkdir();
+			} catch (SecurityException se) {
+				se.printStackTrace();
+			}
+		}
+		return name;
 	}
 	
 }
