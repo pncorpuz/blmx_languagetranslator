@@ -33,7 +33,7 @@
 					test="${!empty translation}">${translation}</c:if></textarea>
 		</div>
 
-	</form>
+<!--	</form>
 
 	
 	<legend class="header">Convert Speech to Text</legend>
@@ -42,13 +42,13 @@
 		<input type="file" name="file" accept=".wav">
 		<input type="submit" name="submit" value="Convert">
 	
-	
+	</form>
 	<c:if test="${!empty transcription}">
 		<h3>Transcript: </h3>
 		<p class="result">${transcription}</p>
 	</c:if>
-	</form>
- 
+	
+ !--> 
 
 </body>
 </html>
