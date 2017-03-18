@@ -36,8 +36,8 @@ public class MainController extends HttpServlet {
 		protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String text = req.getParameter("tr-from");
 		String modelId = req.getParameter("tr-model-id");
-		final Part filePart = req.getPart("file");
-		String filePath = saveFile(filePart);
+		//final Part filePart = req.getPart("file");
+		//String filePath = saveFile(filePart);
 		
 		
 		//SpeechToTextService s2t = new SpeechToTextService();
