@@ -47,7 +47,7 @@ public class MainController extends HttpServlet {
 		req.setAttribute("translation", lt.getTranslation(text,modelId));
 		req.setAttribute("text", text);
 		req.setAttribute("modelId", modelId);
-		req.setAttribute("transcription", s2t.getTranscription(new File(filePath)));
+		//req.setAttribute("transcription", s2t.getTranscription(new File(filePath)));
 		dispatcher.forward(req, resp);
 	}
 	
