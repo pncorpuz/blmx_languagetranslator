@@ -33,7 +33,7 @@
 					test="${!empty translation}">${translation}</c:if></textarea>
 		</div>
 
-<!--	</form>
+	</form>
 
 	
 	<legend class="header">Convert Speech to Text</legend>
@@ -48,7 +48,7 @@
 		<p class="result">${transcription}</p>
 	</c:if>
 	
- !--> 
+ 
 
 </body>
 </html>

@@ -40,7 +40,7 @@ public class MainController extends HttpServlet {
 		String filePath = saveFile(filePart);
 		
 		
-		SpeechToTextService s2t = new SpeechToTextService();
+		//SpeechToTextService s2t = new SpeechToTextService();
 		TranslatorService lt = new TranslatorService();
 		
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/home.jsp");
